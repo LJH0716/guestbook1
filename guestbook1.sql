@@ -23,6 +23,7 @@ nocache;
 commit;
 rollback;
 
+--조회
 select  no 식별번호
         ,name 이름
         ,password 비밀번호
@@ -30,3 +31,12 @@ select  no 식별번호
         ,reg_date 등록일
 from guestbook;
 
+
+--등록
+insert into guestbook
+values(seq_guestbook_no.nextval);
+
+
+--삭제
+delete from guestbook
+where no = 1;
