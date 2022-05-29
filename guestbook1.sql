@@ -40,3 +40,4 @@ values(seq_guestbook_no.nextval);
 --삭제
 delete from guestbook
 where no = 1;
+
