@@ -1,27 +1,18 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-    
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
 <%@ page import="com.javaex.dao.GuestbookDao" %>
 <%@ page import="com.javaex.vo.GuestbookVo" %>
+<%@ page import="java.util.List" %>
+
 <%
-	
+	request.setCharacterEncoding("UTF-8");
 	String name = request.getParameter("name");
-	String password = request.getParameter("password");
+	String password = request.getParameter("pass");
 	String content = request.getParameter("content");
 	
-	GuestbookDao guestbookDao = new GuestbookDao();
-	GuestbookVo guestbookVo = new GuestbookVo(name, password, content);
-	int count = guestbookDao.add(guestbookVo);
+	GuestbookVo vo = new GuestbookVo(name, password, content);
+	GuestbookDao dao = new GuestbookDao();
+	int count = dao.insert(vo);
 	
 	response.sendRedirect("./addList.jsp");
 %>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
-
-</body>
-</html>

@@ -10,15 +10,21 @@ public class GuestbookVo {
 	private String regDate;
 	
 	
+	
 	//생성자
-	GuestbookVo() {
+	public GuestbookVo() {
 		
 	
 	}
 	
-	GuestbookVo(int no) {
+	public GuestbookVo(int no) {
 		this.no = no;
 	
+	}
+
+	public GuestbookVo(int no, String password) {
+		this.no = no;
+		this.password = password;
 	}
 
 	public GuestbookVo(String name, String password, String content) {
